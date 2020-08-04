@@ -1,7 +1,9 @@
 Flask
 Flask-SQLAlchemy
 Flask-WTF
-psycopg2-binary
+psycopg2-binary 
 SQLAlchemy
 ipython
-flask_bcrypt
+flask-bcrypt
+flask-debugtoolbar
+email-validator
