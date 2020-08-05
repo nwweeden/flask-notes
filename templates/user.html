@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Secrets {% endblock %}
+
+{% block content %}
+
+<h3>{{ user.first_name }} {{ user.last_name }}</h3>
+<p>Username: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+
+<h6>Notes</h6>
+<ul>
+    {% for note in user.notes %}
+    <li>
+        <form>
+            <button formaction="/notes/{{note.id}}/delete" formmethod="POST">Delete</button>
+        </form>
+        <a href="/notes/{{note.id}}/update">Edit</a>
+        <a href="/notes/{{note.id}}">{{ note.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="/users/{{user.username}}/notes/add">Add New Note</a>
+<form>
+    <button formaction="/users/{{user.username}}/delete" formmethod="POST">
+        Delete Entire User Account
+    </button>
+</form>
+
+{% endblock %}

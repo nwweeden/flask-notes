@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} Secrets {% endblock %}
+
+{% block content %}
+
+<h3>{{ note.title }}</h3>
+<p>{{ note.content }}</p>
+<a href="/users/{{note.user.username}}">Return to User Homepage</a>
+
+{% endblock %}

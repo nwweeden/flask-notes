@@ -8,22 +8,10 @@
 
 <form method="POST">
 
-    {{ form.hidden_tag() }}
+  {% includes "_form.html" %}
 
-    {% for field in form
-  if field.widget.input_type != 'hidden' %}
-      <p>
-        {{ field.label }}
-        {{ field }}
+  <button type="submit">Register</button>
 
-        {% for error in field.errors %}
-          {{ error }}
-        {% endfor %}
-      </p>
-    {% endfor %}
-
-    <button type="submit">Register</button>
-
-  </form>
+</form>
 
 {% endblock %}
